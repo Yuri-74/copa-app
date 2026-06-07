@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Copa 2026 Tracker</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <script>
+
+// 👉 COLE TODOS OS SEUS 72 JOGOS AQUI DENTRO
+let jogos = [
+
+{ id:1,grupo:"A",time1:"México",time2:"África do Sul",data:"11/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:2,grupo:"A",time1:"Coreia do Sul",time2:"República Tcheca",data:"11/06 23:00",assistido:false,favorito:false,nota:0},
+{ id:3,grupo:"A",time1:"República Tcheca",time2:"África do Sul",data:"18/06 13:00",assistido:false,favorito:false,nota:0},
+{ id:4,grupo:"A",time1:"México",time2:"Coreia do Sul",data:"18/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:5,grupo:"A",time1:"África do Sul",time2:"Coreia do Sul",data:"24/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:6,grupo:"A",time1:"República Tcheca",time2:"México",data:"24/06 22:00",assistido:false,favorito:false,nota:0},
+
+{ id:7,grupo:"B",time1:"Canadá",time2:"Bósnia",data:"12/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:8,grupo:"B",time1:"Catar",time2:"Suíça",data:"13/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:9,grupo:"B",time1:"Suíça",time2:"Bósnia",data:"18/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:10,grupo:"B",time1:"Canadá",time2:"Catar",data:"18/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:11,grupo:"B",time1:"Suíça",time2:"Canadá",data:"24/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:12,grupo:"B",time1:"Bósnia",time2:"Catar",data:"24/06 16:00",assistido:false,favorito:false,nota:0},
+
+{ id:13,grupo:"C",time1:"Brasil",time2:"Marrocos",data:"13/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:14,grupo:"C",time1:"Haiti",time2:"Escócia",data:"13/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:15,grupo:"C",time1:"Escócia",time2:"Marrocos",data:"19/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:16,grupo:"C",time1:"Brasil",time2:"Haiti",data:"19/06 21:30",assistido:false,favorito:false,nota:0},
+{ id:17,grupo:"C",time1:"Marrocos",time2:"Haiti",data:"24/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:18,grupo:"C",time1:"Escócia",time2:"Brasil",data:"24/06 19:00",assistido:false,favorito:false,nota:0},
+
+{ id:19,grupo:"D",time1:"Estados Unidos",time2:"Paraguai",data:"12/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:20,grupo:"D",time1:"Austrália",time2:"Turquia",data:"14/06 01:00",assistido:false,favorito:false,nota:0},
+{ id:21,grupo:"D",time1:"Estados Unidos",time2:"Austrália",data:"19/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:22,grupo:"D",time1:"Turquia",time2:"Paraguai",data:"20/06 00:00",assistido:false,favorito:false,nota:0},
+{ id:23,grupo:"D",time1:"Turquia",time2:"Estados Unidos",data:"25/06 23:00",assistido:false,favorito:false,nota:0},
+{ id:24,grupo:"D",time1:"Paraguai",time2:"Austrália",data:"25/06 23:00",assistido:false,favorito:false,nota:0},
+
+{ id:25,grupo:"E",time1:"Alemanha",time2:"Curaçao",data:"14/06 14:00",assistido:false,favorito:false,nota:0},
+{ id:26,grupo:"E",time1:"Costa do Marfim",time2:"Equador",data:"14/06 20:00",assistido:false,favorito:false,nota:0},
+{ id:27,grupo:"E",time1:"Alemanha",time2:"Costa do Marfim",data:"20/06 17:00",assistido:false,favorito:false,nota:0},
+{ id:28,grupo:"E",time1:"Equador",time2:"Curaçao",data:"20/06 21:00",assistido:false,favorito:false,nota:0},
+{ id:29,grupo:"E",time1:"Curaçao",time2:"Costa do Marfim",data:"25/06 17:00",assistido:false,favorito:false,nota:0},
+{ id:30,grupo:"E",time1:"Equador",time2:"Alemanha",data:"25/06 17:00",assistido:false,favorito:false,nota:0},
+
+{ id:31,grupo:"F",time1:"Holanda",time2:"Japão",data:"14/06 17:00",assistido:false,favorito:false,nota:0},
+{ id:32,grupo:"F",time1:"Suécia",time2:"Tunísia",data:"14/06 23:00",assistido:false,favorito:false,nota:0},
+{ id:33,grupo:"F",time1:"Holanda",time2:"Suécia",data:"20/06 14:00",assistido:false,favorito:false,nota:0},
+{ id:34,grupo:"F",time1:"Tunísia",time2:"Japão",data:"21/06 01:00",assistido:false,favorito:false,nota:0},
+{ id:35,grupo:"F",time1:"Tunísia",time2:"Holanda",data:"25/06 20:00",assistido:false,favorito:false,nota:0},
+{ id:36,grupo:"F",time1:"Japão",time2:"Suécia",data:"25/06 20:00",assistido:false,favorito:false,nota:0},
+
+{ id:37,grupo:"G",time1:"Bélgica",time2:"Egito",data:"15/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:38,grupo:"G",time1:"Irã",time2:"Nova Zelândia",data:"15/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:39,grupo:"G",time1:"Bélgica",time2:"Irã",data:"21/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:40,grupo:"G",time1:"Nova Zelândia",time2:"Egito",data:"21/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:41,grupo:"G",time1:"Nova Zelândia",time2:"Bélgica",data:"27/06 00:00",assistido:false,favorito:false,nota:0},
+{ id:42,grupo:"G",time1:"Egito",time2:"Irã",data:"27/06 00:00",assistido:false,favorito:false,nota:0},
+
+{ id:43,grupo:"H",time1:"Espanha",time2:"Cabo Verde",data:"15/06 13:00",assistido:false,favorito:false,nota:0},
+{ id:44,grupo:"H",time1:"Arábia Saudita",time2:"Uruguai",data:"15/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:45,grupo:"H",time1:"Espanha",time2:"Arábia Saudita",data:"21/06 13:00",assistido:false,favorito:false,nota:0},
+{ id:46,grupo:"H",time1:"Uruguai",time2:"Cabo Verde",data:"21/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:47,grupo:"H",time1:"Cabo Verde",time2:"Arábia Saudita",data:"26/06 21:00",assistido:false,favorito:false,nota:0},
+{ id:48,grupo:"H",time1:"Uruguai",time2:"Espanha",data:"26/06 21:00",assistido:false,favorito:false,nota:0},
+
+{ id:49,grupo:"I",time1:"França",time2:"Senegal",data:"16/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:50,grupo:"I",time1:"Iraque",time2:"Noruega",data:"16/06 19:00",assistido:false,favorito:false,nota:0},
+{ id:51,grupo:"I",time1:"França",time2:"Iraque",data:"22/06 18:00",assistido:false,favorito:false,nota:0},
+{ id:52,grupo:"I",time1:"Noruega",time2:"Senegal",data:"22/06 21:00",assistido:false,favorito:false,nota:0},
+{ id:53,grupo:"I",time1:"Noruega",time2:"França",data:"26/06 16:00",assistido:false,favorito:false,nota:0},
+{ id:54,grupo:"I",time1:"Senegal",time2:"Iraque",data:"26/06 16:00",assistido:false,favorito:false,nota:0},
+
+{ id:55,grupo:"J",time1:"Argentina",time2:"Argélia",data:"16/06 22:00",assistido:false,favorito:false,nota:0},
+{ id:56,grupo:"J",time1:"Áustria",time2:"Jordânia",data:"17/06 01:00",assistido:false,favorito:false,nota:0},
+{ id:57,grupo:"J",time1:"Argentina",time2:"Áustria",data:"22/06 14:00",assistido:false,favorito:false,nota:0},
+{ id:58,grupo:"J",time1:"Jordânia",time2:"Argélia",data:"23/06 00:00",assistido:false,favorito:false,nota:0},
+{ id:59,grupo:"J",time1:"Argélia",time2:"Áustria",data:"27/06 23:00",assistido:false,favorito:false,nota:0},
+{ id:60,grupo:"J",time1:"Jordânia",time2:"Argentina",data:"27/06 23:00",assistido:false,favorito:false,nota:0},
+
+{ id:61,grupo:"K",time1:"Portugal",time2:"Congo",data:"17/06 14:00",assistido:false,favorito:false,nota:0},
+{ id:62,grupo:"K",time1:"Uzbequistão",time2:"Colômbia",data:"17/06 23:00",assistido:false,favorito:false,nota:0},
+{ id:63,grupo:"K",time1:"Portugal",time2:"Uzbequistão",data:"23/06 14:00",assistido:false,favorito:false,nota:0},
+{ id:64,grupo:"K",time1:"Colômbia",time2:"Congo",data:"23/06 23:00",assistido:false,favorito:false,nota:0},
+{ id:65,grupo:"K",time1:"Colômbia",time2:"Portugal",data:"27/06 20:30",assistido:false,favorito:false,nota:0},
+{ id:66,grupo:"K",time1:"Congo",time2:"Uzbequistão",data:"27/06 20:30",assistido:false,favorito:false,nota:0},
+
+{ id:67,grupo:"L",time1:"Inglaterra",time2:"Croácia",data:"17/06 17:00",assistido:false,favorito:false,nota:0},
+{ id:68,grupo:"L",time1:"Gana",time2:"Panamá",data:"17/06 20:00",assistido:false,favorito:false,nota:0},
+{ id:69,grupo:"L",time1:"Inglaterra",time2:"Gana",data:"23/06 17:00",assistido:false,favorito:false,nota:0},
+{ id:70,grupo:"L",time1:"Panamá",time2:"Croácia",data:"23/06 20:00",assistido:false,favorito:false,nota:0},
+{ id:71,grupo:"L",time1:"Panamá",time2:"Inglaterra",data:"27/06 18:00",assistido:false,favorito:false,nota:0},
+{ id:72,grupo:"L",time1:"Croácia",time2:"Gana",data:"27/06 18:00",assistido:false,favorito:false,nota:0}
+
+];
+
+
+// salvar
+function salvar() {
+  localStorage.setItem("jogos", JSON.stringify(jogos));
+}
+
+// carregar
+function carregar() {
+  let dados = localStorage.getItem("jogos");
+  if (dados) jogos = JSON.parse(dados);
+}
+
+// funções
+function toggleAssistido(id){
+  let j = jogos.find(x => x.id === id);
+  j.assistido = !j.assistido;
+  salvar();
+  render();
+}
+
+function toggleFavorito(id){
+  let j = jogos.find(x => x.id === id);
+  j.favorito = !j.favorito;
+  salvar();
+  render();
+}
+
+function darNota(id,n){
+  let j = jogos.find(x => x.id === id);
+  j.nota = n;
+  salvar();
+  render();
+}
+
+// RENDER PRINCIPAL (ORDENADO POR DIA)
+function render(){
+
+  let app = document.getElementById("app");
+  let busca = document.getElementById("busca").value.toLowerCase();
+
+let lista = jogos.filter(j => {
+  if (!busca) return true; // 🔥 ESSA LINHA É A CORREÇÃO
+
+  return j.time1.toLowerCase().includes(busca) ||
+         j.time2.toLowerCase().includes(busca);
+});
+
+  // ordenar
+  lista.sort((a,b)=>{
+    let [d1,h1]=a.data.split(" ");
+    let [d2,h2]=b.data.split(" ");
+
+    let da=new Date(`2026-${d1.split("/").reverse().join("-")}T${h1}`);
+    let db=new Date(`2026-${d2.split("/").reverse().join("-")}T${h2}`);
+
+    return da-db;
+  });
+
+  app.innerHTML="";
+
+  let assistidos = jogos.filter(j=>j.assistido).length;
+  document.getElementById("contador").innerText =
+    `Assistidos: ${assistidos} / ${jogos.length}`;
+
+  // agrupar por dia
+  let grupos = {};
+
+  lista.forEach(j=>{
+    let dia=j.data.split(" ")[0];
+    if(!grupos[dia]) grupos[dia]=[];
+    grupos[dia].push(j);
+  });
+
+  // render
+  Object.keys(grupos).forEach(dia=>{
+
+    let h2=document.createElement("h2");
+    h2.innerText="📅 "+dia;
+    app.appendChild(h2);
+
+    grupos[dia].forEach(j=>{
+
+      let div=document.createElement("div");
+      div.className="jogo";
+
+      if(j.assistido) div.classList.add("assistido");
+      if(j.favorito) div.classList.add("favorito");
+
+      div.innerHTML=`
+        <b>${j.time1} x ${j.time2}</b><br>
+        🕒 ${j.data.split(" ")[1]}<br>
+
+        <button onclick="toggleAssistido(${j.id})">
+          ${j.assistido?"✅":"⬜"}
+        </button>
+
+        <button onclick="toggleFavorito(${j.id})">
+          ${j.favorito?"⭐":"☆"}
+        </button>
+
+        <br>
+        ${[1,2,3,4,5].map(n=>
+          `<button onclick="darNota(${j.id},${n})">
+            ${n<=j.nota?"⭐":"☆"}
+          </button>`
+        ).join("")}
+      `;
+
+      app.appendChild(div);
+    });
+
+  });
+}
+
+// iniciar
+carregar();
+render();
+
+</script>
+
+
+<h1>⚽ Copa 2026 Tracker</h1>
+
+<input id="busca" placeholder="Buscar seleção..." oninput="render()" onkeypress="if(event.key==='Enter') render()" />
+
+<select id="filtro" onchange="render()">
+  <option value="">Todas seleções</option>
+  <option value="Brasil">Brasil</option>
+  <option value="Argentina">Argentina</option>
+  <option value="França">França</option>
+</select>
+
+<h3 id="contador"></h3>
+<h3 id="stats"></h3>
+
+<div id="app"></div>
+
+
+</body>
+</html>
