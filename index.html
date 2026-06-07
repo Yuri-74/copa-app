@@ -142,7 +142,8 @@ function darNota(id,n){
 function render(){
 
   let app = document.getElementById("app");
-  let busca = document.getElementById("busca").value.toLowerCase().trim();
+  let buscaInput = document.getElementById("busca");
+let busca = buscaInput ? buscaInput.value.toLowerCase().trim() : "";
 
 let lista = jogos.filter(j => {
   if (!busca) return true; // 🔥 ESSA LINHA É A CORREÇÃO
@@ -241,6 +242,11 @@ render();
 
 <div id="app"></div>
 
+<script>
+window.onload = function() {
+  render();
+}
+</script>
 
 </body>
 </html>
