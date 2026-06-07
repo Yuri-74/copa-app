@@ -1,0 +1,50 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.jogo {
+  background: #1e293b;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.jogo:hover {
+  transform: scale(1.02);
+}
+
+.assistido {
+  border-left: 5px solid #22c55e;
+}
+
+.favorito {
+  border-left: 5px solid gold;
+}
+
+button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
